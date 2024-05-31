@@ -19,7 +19,6 @@ const init = async () => {
   // Crear (Create)
   app.post('/users', async (req, res) => {
     const user = req.body;
-    console.log('Creating user:', user); // Log para depuración
     try {
       const result = await db.collection('users').insertOne(user);
       user._id = result.insertedId; // Obtener el ID insertado y asignarlo al usuario
